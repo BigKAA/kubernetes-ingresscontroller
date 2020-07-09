@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: access-prometheus
+  namespace: cattle-prometheus
+spec:
+  rules:
+  - host: prometheus.kryukov.local
+    http:
+      paths:
+      - backend:
+          serviceName: access-prometheus
+          servicePort: 80
+        path: /
