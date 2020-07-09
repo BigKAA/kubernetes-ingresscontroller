@@ -3,5 +3,7 @@
 * https://youtu.be/-kUr-sExQtg
 * https://youtu.be/ac-7ZDGCcFA
 
+Файлы, используемые в видео:
+
 * my-ingress-controller.yaml - Деплой ingress controller в режиме NodePort на помеченные при помощи специальных lables поды.
 * prom-ingress.yaml - Тестовый ingress для доступа к установленному Prometheus
