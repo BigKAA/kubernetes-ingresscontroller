@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: access-grafana
+  namespace: cattle-prometheus
+  annotations:
+    kubernetes.io/ingress.class: "nginx-host"
+spec:
+  rules:
+  - host: prometheus.kryukov.local
+    http:
+      paths:
+      - backend:
+          serviceName: access-grafana
+          servicePort: 80
