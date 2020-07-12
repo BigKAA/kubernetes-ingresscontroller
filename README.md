@@ -8,3 +8,5 @@
 
 * my-ingress-controller.yaml - Деплой ingress controller в режиме NodePort на помеченные при помощи специальных lables поды.
 * prom-ingress.yaml - Тестовый ingress для доступа к установленному Prometheus
+
+Вышла новая версия nginx ingress controller - 0.34.0. В этой версии изменили харнилице образов контейнеров. В связи с этим в файле my-ingress-controller.yaml был изменен путь к хранилищу.
