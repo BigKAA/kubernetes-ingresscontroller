@@ -1,0 +1,37 @@
+# NodePort версия контроллера
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    svc: ingress-nginx-metrics
+  name: ingress-nginx-controller-metrics
+  namespace: ingress-nginx
+spec:
+  type: ClusterIP
+  ports:
+    - name: metrics
+      port: 10254
+      protocol: TCP
+      targetPort: 10254
+  selector:
+    app.kubernetes.io/name: ingress-nginx
+    app.kubernetes.io/instance: ingress-nginx
+    app.kubernetes.io/component: controller
+
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: ingress-nginx-metric
+  namespace: ingress-nginx
+  labels:
+    svc: ingress-nginx-metric
+spec:
+  endpoints:
+  - targetPort: metrics
+    interval: 30s
+    path: /metrics
+  selector:
+    matchLabels:
+      svc: ingress-nginx-metrics
+
