@@ -415,9 +415,9 @@ spec:
               containerPort: 8443
               protocol: TCP
             # порт для достпа к метрикам prometheus
-            #- name: metrics
-            #  containerPort: 10254
-            #  protocol: TCP
+            - name: metrics
+              containerPort: 10254
+              protocol: TCP
           volumeMounts:
             - name: webhook-cert
               mountPath: /usr/local/certificates/

@@ -121,9 +121,9 @@ spec:
               containerPort: 443
               protocol: TCP
             # порт для достпа к метрикам prometheus
-            #- name: metrics
-            #  containerPort: 10254
-            #  protocol: TCP
+            - name: metrics
+              containerPort: 10254
+              protocol: TCP
           resources:
             requests:
               cpu: 100m
