@@ -80,6 +80,14 @@ rules:
       - list
       - watch
   - apiGroups:
+    - ''
+    resources:
+      - configmaps
+    verbs:
+      - list
+      - watch
+      - update
+  - apiGroups:
       - ''
     resources:
       - nodes
